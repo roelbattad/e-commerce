@@ -25,7 +25,7 @@
     </div>
 
     <div>
-        <h1 class="text-4xl text-center my-8">{{ __('Featured Products') }}</h1>
+        <h1 class="text-4xl text-center my-8">{{ __('Best Sellers') }}</h1>
         <div class="grid grid-cols-12 gap-2">
             <div class="col-span-3 bg-blue-100 h-72">1</div>
             <div class="col-span-3 bg-blue-100 h-72">2</div>
