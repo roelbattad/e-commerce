@@ -8,9 +8,9 @@
 </head>
 <body>
     <nav class="w-full bg-black text-white">
-        <div class="max-w-7xl flex justify-around mx-auto py-8">
+        <div class="max-w-screen-2xl flex justify-around mx-auto py-8">
             <h1>Logo</h1>
-            <ul class="flex items-center  space-x-4">
+            <ul class="flex items-center  space-x-8">
                 <li><a href="">Home</a></li>
                 <li><a href="">Shop</a></li>
                 <li><a href="">Categories</a></li>
@@ -25,5 +25,7 @@
     <div>
         {{ $slot }}
     </div>
+
+    @vite('resources/js/app.js')
 </body>
 </html>
