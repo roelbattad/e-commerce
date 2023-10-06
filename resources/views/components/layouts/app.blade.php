@@ -8,7 +8,8 @@
 </head>
 <body>
     <nav class="w-full bg-black text-white">
-        <div class="max-w-screen-2xl flex justify-around mx-auto py-8">
+        <!-- <div class="flex justify-around max-w-screen-2xl mx-auto"> -->
+        <div class="max-w-screen-lg flex justify-between mx-auto py-8">
             <h1>Logo</h1>
             <ul class="flex items-center  space-x-8">
                 <li><a href="">Home</a></li>
