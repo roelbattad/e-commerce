@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index']);
 Route::get('/cart', [App\Http\Controllers\CartController::class, 'index']);
+Route::get('product/{id}', [App\Http\Controllers\ProductController::class, 'index']);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

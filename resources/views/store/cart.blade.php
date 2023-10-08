@@ -4,7 +4,7 @@
         <div class="h-20 -mt-20"></div>
         <div class="sm:flex sm:items-center justify-center">
             <div class="sm:flex-auto">
-                <h1 class="text-base font-semibold leading-6 text-gray-900 text-center">Cart</h>
+                <h1 class="font-semibold leading-6 text-gray-900 text-center text-2xl">My Cart</h>
             </div>
         </div>
         <div class="mt-8 flow-root">
@@ -15,7 +15,7 @@
                     <tr>
                         <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">#</th>
                         <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0">Items</th>
-                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 text-right">Quantity</th>
+                        <th scope="col" class="px-3 py-3.5 text-sm font-semibold text-gray-900 text-right">Quantity</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200">
