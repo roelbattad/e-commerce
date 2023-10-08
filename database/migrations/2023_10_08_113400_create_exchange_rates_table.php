@@ -11,14 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('exchange_rates', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->longtext('content');
-            $table->softdeletes();
+            $table->string('currency_code');
+            $table->double('exchange_rate');
             $table->timestamps();
         });
+
+        Artisan::call('db:seed', [
+            '--class' => 'ExchangeRatesSeeder',
+            '--force' => true 
+        ]);
     }
 
     /**
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('exchange_rates');
     }
 };

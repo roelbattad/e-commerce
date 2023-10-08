@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Http;
+use Countries;
+
+class UpdateExchangeRates extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'update:exchange_rates';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Command description';
+
+    /**
+     * Execute the console command.
+     */
+    public function handle()
+    {
+        $response = Http::get(config('services.currency.api_endpoint'),[
+            'apikey' => config('services.currency.api_key')
+        ])->json();
+
+        foreach ($response['data'] as $currency_code => $exchange_rate) {
+            ExchangeRate::create([
+                'currency_code' => $currency_code,
+                'exchange_rate' => $exchange_rate
+            ]);
+        }
+        
+        // $france = Countries::where('name.common', 'Indonesia')->first()->currencies;
+        // dump($france);
+    }
+}
