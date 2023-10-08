@@ -39,9 +39,9 @@
                     <li>Brand 6</li>
                 </ul>
             </div>
-            <div class="mx-auto flex items-center justify-between">
+            <div class="mx-auto flex items-center justify-center space-x-8">
                 <p>{{ __('© 2023 E-Commerce') }}</p>
-                <ul class="flex items-center  space-x-8">
+                <ul class="flex items-center  space-x-4">
                     <li><a href="">Home</a></li>
                     <li><a href="">Shop</a></li>
                     <li><a href="">Categories</a></li>
