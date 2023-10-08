@@ -33,7 +33,12 @@ return [
     
     'currency' => [
         'api_endpoint' => env('CURRENCY_API_ENDPOINT'),
-        'api_key' => env('API_KEY')
+        'api_key' => env('CURRENCY_API_KEY')
     ],
+
+    'apiip' => [
+        'api_endpoint' => env('APIIP_ENDPOINT'),
+        'access_key' => env('APIIP_ACCESS_KEY')
+    ]
 
 ];
