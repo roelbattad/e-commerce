@@ -1,5 +1,5 @@
 <x-layouts.app>
-<div class="max-w-screen-lg mx-auto">
+<div class="max-w-screen-lg mx-auto my-8">
     <!-- Banner Section -->
     <!-- Slider main container -->
     <div class="swiper navigation-swiper">

@@ -1,6 +1,6 @@
 <x-layouts.app>
 <div class="max-w-screen-lg mx-auto">
-    <div class="flex items-start space-x-4 mt-8 w-full">
+    <div class="flex items-start space-x-4 my-8 w-full">
         <!-- Top Picks -->
         <div class="w-1/3 p-4 bg-blue-100">
             <h2 class="text-center mb-4 font-bold text-lg">Top Picks of the Day!</h2>

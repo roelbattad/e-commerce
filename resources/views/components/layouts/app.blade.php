@@ -7,27 +7,27 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <nav class="w-full bg-black text-white">
-        <!-- <div class="flex justify-around2xl mx-auto"> -->
-        <div class="max-w-screen-lg flex justify-between mx-auto py-8">
-            <h1>Logo</h1>
-            <ul class="flex items-center space-x-8">
-                <li><a href="">Home</a></li>
-                <li><a href="">Shop</a></li>
-                <li><a href="">Categories</a></li>
-            </ul>
-            <div class="flex items-center space-x-1">
-                <a href="">Cart</a>
-                <div class="bg-white border rounded-lg text-red-300 px-2">1</div>
+    <nav class="w-full bg-black text-white h-20">
+        <!-- <div class="flex flex-col items-center w-full"> -->
+            <div class="max-w-screen-lg flex justify-between mx-auto py-8">
+                <h1>Logo</h1>
+                <ul class="flex items-center space-x-8">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Shop</a></li>
+                    <li><a href="">Categories</a></li>
+                </ul>
+                <div class="flex items-center space-x-1">
+                    <a href="">Cart</a>
+                    <div class="bg-white border rounded-lg text-red-300 px-2">1</div>
+                </div>
             </div>
-            
-        </div>
+        <!-- </div> -->
     </nav>
     <div>
         {{ $slot }}
     </div>
 
-    <footer class="w-full bg-black text-white mt-8 py-8">
+    <footer class="w-full bg-black text-white py-8">
         <div class="max-w-screen-lg mx-auto">
             <div class="mb-8">
                 <ul class="flex items-center text-lg justify-between">
