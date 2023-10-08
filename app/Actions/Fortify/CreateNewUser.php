@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
-use App\Libraries\Locale;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -27,7 +26,7 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
-        $country_details = Locale::getUserCountryDetails();
+        $country_details = locale()->getUserCountryDetails();
 
         return User::create([
             'name' => $input['name'],

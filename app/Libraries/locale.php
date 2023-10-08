@@ -8,13 +8,13 @@ use Countries;
 
 class Locale 
 {
-    public static function getUserCountryDetails(): array
+    public function getUserCountryDetails(): array
     {
 
         // $ip = Request::ip();
         // $ip = '49.150.54.157'; //philippines
-        // $ip = '72.229.28.185'; // usa
-        $ip = '102.215.221.234'; //france
+        $ip = '72.229.28.185'; // usa
+        // $ip = '102.215.221.234'; //france reunion island
         $response = Http::get(config('services.apiip.api_endpoint').'/'.$ip,[
             'access_key' => config('services.apiip.access_key')
         ])->json();

@@ -27,24 +27,25 @@ class UpdateExchangeRates extends Command
      */
     public function handle()
     {
-        // $response = Http::get(config('services.currency.api_endpoint'),[
-        //     'apikey' => config('services.currency.api_key')
-        // ])->json();
-
-        // foreach ($response['data'] as $currency_code => $exchange_rate) {
-        //     ExchangeRate::create([
-        //         'currency_code' => $currency_code,
-        //         'exchange_rate' => $exchange_rate
-        //     ]);
-        // }
-
-        $ip = '49.150.54.157';
-         $response = Http::get(config('services.apiip.api_endpoint').'/'.$ip,[
-            'access_key' => config('services.apiip.access_key')
+        $response = Http::get(config('services.currency.api_endpoint'),[
+            'apikey' => config('services.currency.api_key')
         ])->json();
 
-        dump($response);
+        foreach ($response['data'] as $currency_code => $exchange_rate) {
+            ExchangeRate::create([
+                'currency_code' => $currency_code,
+                'exchange_rate' => $exchange_rate
+            ]);
+        }
 
+        // $ip = '49.150.54.157';
+        //  $response = Http::get(config('services.apiip.api_endpoint').'/'.$ip,[
+        //     'access_key' => config('services.apiip.access_key')
+        // ])->json();
+
+        // dump($response);
+
+        // dump(locale()->getUserCountryDetails());
 
         // $france = Countries::where('name.common', 'Indonesia')->first()->currencies;
         // dump($france);
