@@ -32,7 +32,7 @@ class UpdateExchangeRates extends Command
         ])->json();
 
         foreach ($response['data'] as $currency_code => $exchange_rate) {
-            ExchangeRate::create([
+            ExchangeRate::updateOrCreate([
                 'currency_code' => $currency_code,
                 'exchange_rate' => $exchange_rate
             ]);
