@@ -3,6 +3,7 @@
 namespace App\Libraries;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Request;
 use Countries;
 
 class Locale 
@@ -10,9 +11,10 @@ class Locale
     public static function getUserCountryDetails(): array
     {
 
-        $ip = '49.150.54.157'; //philippines
+        // $ip = Request::ip();
+        // $ip = '49.150.54.157'; //philippines
         // $ip = '72.229.28.185'; // usa
-        // $ip = '102.215.221.234'; //france
+        $ip = '102.215.221.234'; //france
         $response = Http::get(config('services.apiip.api_endpoint').'/'.$ip,[
             'access_key' => config('services.apiip.access_key')
         ])->json();
