@@ -36,8 +36,29 @@
             <main>
                 {{ $slot }}
             </main>
+            <footer class="w-full bg-black text-white py-8">
+                <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="mb-8">
+                        <ul class="flex items-center text-lg justify-between">
+                            <li>Brand 1</li>
+                            <li>Brand 2</li>
+                            <li>Brand 3</li>
+                            <li>Brand 4</li>
+                            <li>Brand 5</li>
+                            <li>Brand 6</li>
+                        </ul>
+                    </div>
+                    <div class="mx-auto flex items-center justify-center space-x-8">
+                        <p>{{ __('© 2023 E-Commerce') }}</p>
+                        <ul class="flex items-center  space-x-4">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Shop</a></li>
+                            <li><a href="">Categories</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
         </div>
-
         @stack('modals')
 
         @livewireScripts

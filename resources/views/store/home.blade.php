@@ -1,5 +1,5 @@
-<x-layouts.app>
-<div class="max-w-screen-lg mx-auto my-8">
+<x-app-layout>
+<div class="max-w-screen-xl mx-auto my-8 px-4 sm:px-6 lg:px-8">
     <!-- Banner Section -->
     <!-- Slider main container -->
     <div class="swiper navigation-swiper">
@@ -34,4 +34,4 @@
         </div>
     </div>
 </div>
-</x-layouts.app>
+</x-app-layout>

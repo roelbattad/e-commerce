@@ -1,5 +1,5 @@
-<x-layouts.app>
-<div class="max-w-screen-lg mx-auto">
+<x-app-layout>
+<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-start space-x-4 my-8 w-full">
         <!-- Top Picks -->
         <div class="w-1/3 p-4 bg-blue-100">
@@ -112,4 +112,4 @@
         </div>
     </div>
 </div>
-</x-layouts.app>
+</x-app-layout>
