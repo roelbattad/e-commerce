@@ -13,22 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
-Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart');
-Route::get('product/{id}', [App\Http\Controllers\ProductController::class, 'index']);
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
+
+
+Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop');
+Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart');
+Route::get('product/{id}', [App\Http\Controllers\ProductController::class, 'index']);
