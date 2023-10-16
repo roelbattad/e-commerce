@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->default('Product name');
-            $table->string('description')->default('Product description');
+            $table->string('name')->default('');
+            $table->string('description')->default('');
+            $table->integer('brand_id')->default(null);
             $table->text('content')->nullable();
+            $table->binary('images')->nullable();
+            $table->float('srp')->nullable();
             $table->softdeletes();
             $table->timestamps();
         });

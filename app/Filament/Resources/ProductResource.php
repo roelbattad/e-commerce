@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
+use App\Models\Brand;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -23,9 +24,30 @@ class ProductResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\TextInput::make('description')->required(),
-                Forms\Components\RichEditor::make('content'),
+                Forms\Components\Select::make('brand_id')
+                    ->label('Select Brand')
+                    ->options(Brand::all()->pluck('name', 'id'))
+                    ->searchable()
+                    ->required(),
+                Forms\Components\TextInput::make('name')
+                    ->required(),
+                Forms\Components\Textarea::make('description')
+                    ->rows(3)
+                    ->required(),
+                Forms\Components\RichEditor::make('content')
+                    ->label('Content (Optional)'),
+                Forms\Components\FileUpload::make('images')
+                    ->columnSpan([
+                        'lg' => 2,
+                        'xl' => 2,
+                        '2xl' => 2
+                    ])
+                    ->imagePreviewHeight('100')
+                    ->directory('products')
+                    ->visibility('private')
+                    ->multiple()
+                    ->reorderable()
+                    ->required(),
             ]);
     }
 
@@ -34,7 +56,11 @@ class ProductResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('description')
+                Tables\Columns\TextColumn::make('description')->limit(70),
+                Tables\Columns\ImageColumn::make('images')
+                    ->visibility('private')
+                    ->circular()
+                    ->stacked()
             ])
             ->filters([
                 //
